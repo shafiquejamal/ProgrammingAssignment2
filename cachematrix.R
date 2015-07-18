@@ -32,7 +32,7 @@ makeCacheMatrix <- function(x = matrix()) {
 # argument, and then returns this inverse. 
 #
 
-cacheSolve <- function(x) {
+cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
         inv <- x$getInverseOfX()
         if(!is.null(inv)) {
@@ -41,7 +41,7 @@ cacheSolve <- function(x) {
         } else {
             message("cacluating...")
             xmatrix <- x$get()
-            invOfX <- solve(xmatrix)
+            invOfX <- solve(xmatrix, ...)
             x$setInverseOfX(invOfX)
             invOfX
         }
